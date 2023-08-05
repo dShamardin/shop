@@ -68,6 +68,10 @@ UI:
 ![img_4.png](img_4.png)
 ![img_5.png](img_5.png)
 
+Отчет для  Allure TestOPs не загружен
+![image](https://github.com/dShamardin/shop/assets/122361790/5a44e964-ce1b-4580-8d38-b0fae5083f5e)
+
+
 
 
 
