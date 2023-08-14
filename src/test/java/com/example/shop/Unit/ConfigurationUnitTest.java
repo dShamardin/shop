@@ -70,5 +70,4 @@ public class ConfigurationUnitTest {
 
         verify(mockFactory, times(1)).openSession();
     }
-
 }

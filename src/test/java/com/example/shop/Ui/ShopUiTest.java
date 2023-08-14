@@ -33,11 +33,11 @@ public class ShopUiTest {
     @Story("Главная страница")
     public void ShouldCheckMainPageLocation() {
         step("Проверить главную страницу сайта Онлайн-магазинов, по адрессу", () -> {
-            WebDriverRunner.url().equals("http://localhost:4000/");
+           baseUiTest.CheckmainURL();
         });
         step("Приветствие на главной странице и наличие логотипа в заголовке", () -> {
-            baseUiTest.Greetings.shouldHave(Condition.text("Welcome to our shop constructor!"));
-            baseUiTest.MainPicture.shouldBe(Condition.visible);
+           baseUiTest.CheckGreetingsHave();
+           baseUiTest.CheckMainPictureHave();
         });
 
     }
@@ -49,9 +49,9 @@ public class ShopUiTest {
     @Story("Главная страница")
     public void ShouldCheckMainButtonsInTopsOfThePage() {
         step("Проверить наличие кнопок: Create shop, All shops, Delete shop", () -> {
-            baseUiTest.Button_Href_CREATE_SHOP.shouldBe(Condition.visible);
-            baseUiTest.Button_Href_AllShops.shouldBe(Condition.visible);
-            baseUiTest.Button_Href_DeleteShop.shouldBe(Condition.visible);
+            baseUiTest.Button_Href_CREATE_SHOPVisible();
+            baseUiTest.Button_Href_AllShopsVisible();
+            baseUiTest.Button_Href_DeleteShopVisible();
         });
     }
 
@@ -62,14 +62,14 @@ public class ShopUiTest {
     @Story("Главная страница")
     public void ShouldCheckWorkMainButtonsInTopsOfThePage() {
         step("Проверить кликабельность кнопок: Create shop, All shops, Delete shop", () -> {
-            baseUiTest.Button_Href_CREATE_SHOP.click();
-            baseUiTest.Form_CreateShop.shouldBe(Condition.visible);
+            baseUiTest.Button_Href_CREATE_SHOPClic();
+            baseUiTest.Form_CreateShopVisible();
 
-            baseUiTest.Button_Href_AllShops.click();
-            baseUiTest.Form_AlreadyCreatedShops.shouldBe(Condition.visible);
+            baseUiTest.Button_Href_AllShopsClick();
+            baseUiTest.Form_AlreadyCreatedShopsVisible();
 
-            baseUiTest.Button_Href_DeleteShop.click();
-            baseUiTest.Form_DeleateShop.shouldBe(Condition.visible);
+            baseUiTest.Button_Href_DeleteShopClick();
+            baseUiTest.Form_DeleateShopVisible();
         });
     }
 
@@ -81,15 +81,15 @@ public class ShopUiTest {
     public void ShouldCheckButtonCreateShop() {
         step("Ввести в поле наименование магазина - название магазина, поставить отметку публичный, нажать кнопку " +
                 "Create shop", () -> {
-            baseUiTest.placeholderEnterShopName.setValue("Create New Online shop№1");
-            baseUiTest.checkbox.click();
-            baseUiTest.Button_Createshop.click();
+            baseUiTest.PlaceholderEnterShopNameSetValue();
+            baseUiTest.CheckboxClick();
+            baseUiTest.Button_CreateshopClick();
             actions().keyDown(Keys.ENTER).click();
         });
 
         step("Подтвердить действие на странице, проверить добавление магазина в список магазинов", () -> {
             actions().keyDown(Keys.ENTER).click();
-            baseUiTest.Body_Table.shouldHave(Condition.text("Create New Online shop№1"));
+            baseUiTest.Body_TableText();
         });
 
     }
@@ -101,8 +101,8 @@ public class ShopUiTest {
     @Story("Главная страница")
     public void ShouldCheckButtonAllShop() {
         step("Проверить переход по кнопке-ссылке All shops, к списку магазинов", () -> {
-            baseUiTest.Button_Href_AllShops.click();
-            baseUiTest.Form_AlreadyCreatedShops.shouldBe(Condition.visible);
+            baseUiTest.Button_Href_AllShopsClick();
+            baseUiTest.Form_AlreadyCreatedShopsVisible();
         });
     }
 
@@ -113,8 +113,8 @@ public class ShopUiTest {
     @Story("Главная страница")
     public void ShouldCheckButtonDeleteShop() {
         step("Ввести в поле Enter shop id - id магазина, нажать кнопку Delete shop", () -> {
-            baseUiTest.placeholderEnterShopId.setValue("8752");
-            baseUiTest.Button_DeleteShop.click();
+            baseUiTest.placeholderEnterShopIdSetValue();
+            baseUiTest.Button_DeleteShopClick();
         });
 
         step("Подтвердить действие на странице", () -> {
@@ -130,10 +130,10 @@ public class ShopUiTest {
     public void ShouldCheckRefreshButton() {
         step("Проверить рабоспособность кнопки refresh, проверить что на главной странице отображаетя адрес," +
                 "приветствие, наличие логотипа", () -> {
-            baseUiTest.Button_Refresh.click();
-            WebDriverRunner.url().equals("http://localhost:4000/");
-            baseUiTest.Greetings.shouldHave(Condition.text("Welcome to our shop constructor!"));
-            baseUiTest.MainPicture.shouldBe(Condition.visible);
+            baseUiTest.Button_RefreshClick();
+            baseUiTest.CheckmainURL();
+            baseUiTest.CheckGreetingsHave();
+            baseUiTest.CheckMainPictureHave();
 
         });
     }
@@ -145,11 +145,12 @@ public class ShopUiTest {
     @Story("Главная страница")
     public void ShouldCheckTelegramButton() {
         step("Нажать на кнопку Telegram", () -> {
-            baseUiTest.Button_Telegram.click();
+            baseUiTest.Button_TelegramClick();
         });
         step("Проверить переход на страницу Telegram", () -> {
-            WebDriverRunner.url().equals("https://web.telegram.org/a/");
+            baseUiTest.TelegramURL();
         });
+
     }
 
     //Test №9
@@ -159,10 +160,11 @@ public class ShopUiTest {
     @Story("Главная страница")
     public void ShouldCheckVKButton() {
         step("Нажать на кнопку VK", () -> {
-            baseUiTest.Button_VK.click();
+            baseUiTest.Button_VKClick();
         });
         step("Проверить переход на страницу VK", () -> {
-            WebDriverRunner.url().equals("https://m.vk.com/");
+            baseUiTest.VKURL();
+            Thread.sleep(5000);
         });
     }
 }
