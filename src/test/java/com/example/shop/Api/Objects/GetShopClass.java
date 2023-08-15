@@ -13,7 +13,7 @@ public class GetShopClass extends SupportingClass {
      static Boolean shopPublic;
 
     public void setShopId(Long shopId) {
-        this.shopId = faker.random().nextLong();
+        this.shopId = shopId;
     }
 
     public Long getShopId() {
@@ -21,7 +21,7 @@ public class GetShopClass extends SupportingClass {
     }
 
     public void setShopName(String shopName) {
-        this.shopName = faker.name().username();
+        this.shopName = shopName;
     }
 
     public String getShopName() {
@@ -29,7 +29,7 @@ public class GetShopClass extends SupportingClass {
     }
 
     public void  setShopPublic(boolean shopPublic) {
-        this.shopPublic = faker.random().nextBoolean();
+        this.shopPublic = shopPublic;
     }
 
     public Boolean isShopPublic() {
