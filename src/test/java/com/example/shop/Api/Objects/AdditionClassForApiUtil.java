@@ -5,9 +5,9 @@ public class AdditionClassForApiUtil {
 
     static String name;
 
-    static Boolean Public;
+    static Boolean Public_status;
     public void setId(Long Id) {
-        AdditionClassForApiUtil.Id = Id;
+        this.Id = Id;
     }
 
     public Long getId() {
@@ -15,25 +15,25 @@ public class AdditionClassForApiUtil {
     }
 
     public void setName(String name) {
-        AdditionClassForApiUtil.name = name;
+        this.name = name;
     }
 
     public String getName() {
         return name;
     }
 
-    public void  setPublic(boolean Public) {
-        AdditionClassForApiUtil.Public = Public;
+    public void  setPublic(boolean Public_status) {
+        this.Public_status = Public_status;
     }
 
-    public Boolean isShopPublic() {
-        return Public;
+    public Boolean isPublic_status() {
+        return Public_status;
     }
 
-    public AdditionClassForApiUtil(Long Id, String name, Boolean Public) {
-        AdditionClassForApiUtil.Id = Id;
-        AdditionClassForApiUtil.name = name;
-        AdditionClassForApiUtil.Public = Public;
+    public AdditionClassForApiUtil(Long Id, String name, Boolean Public_status) {
+        this.Id = Id;
+        this.name = name;
+        this.Public_status = Public_status;
     }
 
 }

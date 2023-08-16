@@ -1,6 +1,7 @@
 package com.example.shop.Api;
 
 import com.example.shop.Api.Objects.AddShopCLass;
+import com.example.shop.Api.Objects.AdditionClassForApiUtil;
 import com.example.shop.Api.Objects.GetShopClass;
 import io.qameta.allure.Feature;
 import io.restassured.RestAssured;
@@ -121,12 +122,12 @@ public class ShopApiTest extends BaseApiTest {
     @Test
     @Feature("Онлайн Магазин")
     @DisplayName("Cоздание магазина через Api")
-    public void ShouldAddShopByApi() throws IOException {
+    public void ShouldAddShopByApi() throws IOException, IndexOutOfBoundsException {
 
 
         RequestSpecification request = RestAssured.given();
 
-        JSONObject data = createOnlineShopByApi();
+        AdditionClassForApiUtil data = (AdditionClassForApiUtil) createOnlineShopByApi();
         given()
                 .body(data)
                 .when()

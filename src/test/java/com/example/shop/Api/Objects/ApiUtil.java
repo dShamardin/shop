@@ -13,18 +13,18 @@ public class ApiUtil extends BaseApiTest {
 
     private final static String baseUrl = MAIN_URL;
 
-    public static JSONObject createOnlineShopByApi() throws IOException {
+    public static Object createOnlineShopByApi() throws IOException {
         OkHttpClient client = new OkHttpClient();
 
         final String name = "New Online Shop Created By API";
 
-        final Integer Id = 123;
+        final Long Id = 123L;
 
         final Boolean Public_status = true;
 
         FormBody formBody = new FormBody(
                 List.of("New Online Shop Created By API",
-                        "123",
+                        "123L",
                         "true"),
                 List.of(name
                 ));
@@ -41,7 +41,7 @@ public class ApiUtil extends BaseApiTest {
 
         return new JSONObject()
                 .put("New Online Shop Created By API", name)
-                .put("123", Id)
+                .put("123L", Id)
                 .put("true", Public_status);
     }
 }
