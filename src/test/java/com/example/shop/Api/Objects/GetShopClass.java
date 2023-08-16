@@ -1,16 +1,16 @@
-package com.example.shop.models;
+package com.example.shop.Api.Objects;
 
-public class ShopDto {
+import okhttp3.ResponseBody;
 
-    private Long shopId;
+import java.util.List;
 
-    private String shopName;
+public class GetShopClass extends SupportingClass {
 
-    private boolean shopPublic;
+     static Long shopId;
 
-    public ShopDto() {
+     static String shopName;
 
-    }
+     static Boolean shopPublic;
 
     public void setShopId(Long shopId) {
         this.shopId = shopId;
@@ -28,18 +28,20 @@ public class ShopDto {
         return shopName;
     }
 
-    public void setShopPublic(boolean shopPublic) {
+    public void  setShopPublic(boolean shopPublic) {
         this.shopPublic = shopPublic;
     }
 
-    public boolean isShopPublic() {
+    public Boolean isShopPublic() {
         return shopPublic;
     }
 
-    public ShopDto(Long shopId, String shopName, boolean shopPublic) {
+    public void GetShopClass(Long shopId, String shopName, Boolean shopPublic) {
         this.shopId = shopId;
         this.shopName = shopName;
         this.shopPublic = shopPublic;
     }
+
+
 
 }

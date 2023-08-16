@@ -55,7 +55,7 @@ public class ConfigurationUnitTest {
         });
     }
 
-    // Test №4 Get a new session when factory correct
+    // Test №4
     @Test
     @DisplayName("Получение нового объекта session, при маппинге для базы данных")
     void ShouldCreateNewSessionWithFactory() {
@@ -70,5 +70,4 @@ public class ConfigurationUnitTest {
 
         verify(mockFactory, times(1)).openSession();
     }
-
 }
